@@ -6,9 +6,10 @@ const ProductSchema = new mongoose.Schema({
         trim:true
     },
     image: {
-        type: String,
-        required: true,
-        trim:true
+        type: Object,
+        default : {
+            path:"https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg"
+        }
     },
     desc: {
         type:String,
@@ -21,8 +22,8 @@ const ProductSchema = new mongoose.Schema({
     },
     SKU: {
         // stock keeping unit
-        type: Array,
-        default: []
+        type: String,
+        required: true
     },
     category: {
         type: String,

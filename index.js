@@ -31,6 +31,9 @@ app.get(`/`, async (req, res) => {
 
 app.use(`/api/auth`, require('./route/authRoute'))
 app.use(`/api/category`, require('./route/categoryRoute'))
+app.use(`/api/product`, require('./route/productRoute'))
+app.use(`/api/cart`, require('./route/cartRoute'))
+app.use(`/api/order`, require('./route/orderRoute'))
 
 //default route
 app.all(`/*`, async (req, res) => {

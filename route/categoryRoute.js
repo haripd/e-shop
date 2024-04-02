@@ -3,9 +3,12 @@ const { createCategory, readAllCategory, readSingleCategory, updateCategory, del
 const auth = require('../middleware/auth')
 const adminAuth = require('../middleware/adminAuth')
 
+//without auth
+categoryRoute.get(`/all`, readAllCategory)
+categoryRoute.get(`/single/:id`, readSingleCategory)
+
+//with auth (admin)
 categoryRoute.post(`/add`, auth, adminAuth,  createCategory)
-categoryRoute.get(`/all`, auth, adminAuth, readAllCategory)
-categoryRoute.get(`/single/:id`, auth, adminAuth, readSingleCategory)
 categoryRoute.patch(`/update/:id`, auth, adminAuth, updateCategory)
 categoryRoute.delete(`/delete/:id`, auth, adminAuth, deleteCategory)
 

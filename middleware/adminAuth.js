@@ -18,6 +18,7 @@ const adminAuth = async(req, res, next) => {
         }
         
         // res.json({ admin: "admin auth middleware"})
+        //continue execution to next controller
         next()
         
     } catch (error) {
