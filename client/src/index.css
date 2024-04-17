@@ -22,3 +22,13 @@ code {
 .text-theme {
   color: #6A62E8 !important;
 }
+
+.active {
+  background : #6c63ff !important;
+  border-color: #6c63ff !important;
+
+}
+
+.no-link{
+  /* text-decoration:  */
+}

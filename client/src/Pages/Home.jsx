@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 
 const Home = () => {
+  const [products, setProducts] = useState([])
+  const [categories, setCategories] = useState([])
+
   return (
-    <div className='text-success text-center display-4'></div>
+    <div className='container mt-5 p-5'>
+      <Outlet />
+    </div>
   )
 }
 

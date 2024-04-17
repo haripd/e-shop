@@ -5,9 +5,8 @@ const UserModel = require('../model/user');
 
 const readAllUsers = async (req, res, next) => {
     try {
-        res.json({
-            msg: "read all users"
-        })
+        let data = await UserModel.find({})
+        res.status(StatusCodes.OK).json({status:true, length:data.length, users:data})
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             status: false,
@@ -15,4 +14,4 @@ const readAllUsers = async (req, res, next) => {
         });
     }
 }
-module.exports = UserModel
+module.exports = { readAllUsers }
